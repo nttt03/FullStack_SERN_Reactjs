@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
-import {getAllUsers, createNewUserService} from '../../services/userService';
+import {getAllUsers, createNewUserService, deleteUserService} from '../../services/userService';
 import ModalUser from './ModalUser';
 import { emitter } from '../../utils/emitter';
 
@@ -63,6 +63,21 @@ class UserManage extends Component {
         })
     }
 
+    handleDeleteUser = async (user) => {
+        try {
+            let response = await deleteUserService(user.id);
+            if (response && response.errCode !== 0) {
+                alert(response.errMessage);
+            }
+            else {
+                await this.getAllUsersFromReact();
+            }
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
+
     /** Life cycle React
      *  Run component:
      * 1. Run construct -> init state
@@ -71,7 +86,7 @@ class UserManage extends Component {
      */
 
     render() {
-        console.log('ckeck render: ', this.state)
+        // console.log('ckeck render: ', this.state)
         let arrUsers = this.state.arrUsers;
         return (
             <div className='users-container'>
@@ -106,7 +121,7 @@ class UserManage extends Component {
                                             <td>{item.address}</td>
                                             <td>
                                                 <button className='btn-edit'><i className="fas fa-pencil-alt"></i></button>
-                                                <button className='btn-delete'><i className="fas fa-trash"></i></button>
+                                                <button className='btn-delete' onClick={()=>this.handleDeleteUser(item)}><i className="fas fa-trash"></i></button>
                                             </td>
                                         </tr>
                                     )
