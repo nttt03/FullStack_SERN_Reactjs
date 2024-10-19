@@ -62,6 +62,11 @@
 
             .language-vi {
                 margin-right: 10px;
+                
+                span {
+                    cursor: pointer;
+                }
+
                 &.active {
                     color: #fdf90d;
                     width: 30px;
@@ -73,6 +78,11 @@
                 }
             }
             .language-en {
+
+                span {
+                    cursor: pointer;
+                }
+
                 &.active {
                     color: #ffffff;
                     width: 30px;
