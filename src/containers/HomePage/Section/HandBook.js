@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './Specialty.scss'
+import './MedicalFacility.scss'
 import Slider from 'react-slick';
 import specialtyImg from '../../../assets/specialty/image.png';
 
-
-class Specialty extends Component {
+class HandBook extends Component {
 
     render() {
-        
         return (
-            <div className='section-share section-specialty'>
+            <div className='section-share section-handbook'>
                 <div className='section-container'>
 
                     <div className='section-header'>
-                        <span>Chuyên khoa phổ biến</span>
+                        <span>Cẩm nang</span>
                         <button className='btn btn-secondary px-3'>Xem thêm</button>
                     </div>
 
@@ -22,27 +20,27 @@ class Specialty extends Component {
                         <Slider {...this.props.settings}>
                             <div className='section-customize'>
                                 <img className='bg-image' src={specialtyImg} />
-                                <span>Cơ xương khớp 1</span>
+                                <span>Hệ thống y tế An Việt 1</span>
                             </div>
                             <div className='section-customize'>
                                 <img className='bg-image' src={specialtyImg} />
-                                <span>Cơ xương khớp 2</span>
+                                <span>Hệ thống y tế An Việt 2</span>
                             </div>
                             <div className='section-customize'>
                                 <img className='bg-image' src={specialtyImg} />
-                                <span>Cơ xương khớp 3</span>
+                                <span>Hệ thống y tế An Việt 3</span>
                             </div>
                             <div className='section-customize'>
                                 <img className='bg-image' src={specialtyImg} />
-                                <span>Cơ xương khớp 4</span>
+                                <span>Hệ thống y tế An Việt 4</span>
                             </div>
                             <div className='section-customize'>
                                 <img className='bg-image' src={specialtyImg} />
-                                <span>Cơ xương khớp 5</span>
+                                <span>Hệ thống y tế An Việt 5</span>
                             </div>
                             <div className='section-customize'>
                                 <img className='bg-image' src={specialtyImg} />
-                                <span>Cơ xương khớp 6</span>
+                                <span>Hệ thống y tế An Việt 6</span>
                             </div>
                         </Slider>
                     </div>
@@ -58,15 +56,13 @@ class Specialty extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn,
-        language: state.app.language,
+        isLoggedIn: state.user.isLoggedIn
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default connect(mapStateToProps, mapDispatchToProps)(HandBook);
