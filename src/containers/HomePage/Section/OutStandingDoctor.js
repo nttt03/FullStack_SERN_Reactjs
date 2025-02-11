@@ -4,6 +4,7 @@ import Slider from 'react-slick';
 import specialtyImg from '../../../assets/specialty/doctor.jpg';
 import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
+import { FormattedMessage } from 'react-intl';
 
 class OutStandingDoctor extends Component {
     constructor(props){
@@ -29,14 +30,14 @@ class OutStandingDoctor extends Component {
         // console.log('data topdotor: ', this.props.topDoctorsRedux)
         let arrDoctors = this.state.arrDoctors;
         let {language} = this.props;
-        arrDoctors = arrDoctors.concat(arrDoctors)
+        // arrDoctors = arrDoctors.concat(arrDoctors)
         return (
             <div className='section-share section-outstanding-doctor'>
                 <div className='section-container'>
 
                     <div className='section-header'>
-                        <span>Bác sĩ nổi bật tuần qua</span>
-                        <button className='btn btn-secondary px-3'>Xem thêm</button>
+                        <span><FormattedMessage id="homepage.outstanding-doctor"/></span>
+                        <button className='btn btn-secondary px-3'><FormattedMessage id="homepage.more-infor"/></button>
                     </div>
 
                     <div className='section-body'>

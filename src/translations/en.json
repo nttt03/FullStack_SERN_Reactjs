@@ -53,5 +53,9 @@
         "image": "Avatar",
         "save": "Save user",
         "edit": "Save change"
+    },
+    "homepage": {
+        "outstanding-doctor": "Doctor featured last week",
+        "more-infor": "See more"
     }
 }

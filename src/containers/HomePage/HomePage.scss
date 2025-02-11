@@ -17,6 +17,10 @@
     opacity: 1 !important;
 }
 
+.slick-disabled {
+    display: none !important;
+}
+
 .section-share {
     height: 330px;
     
@@ -58,7 +62,7 @@
     .section-body {
         .section-customize {
             .customize-border {
-                border: 1px solid #1b1a1a;
+                border: 1px solid #f0bf0d;
                 margin: 5px;
                 
             }
