@@ -21,7 +21,6 @@
         "child5": "Sức khỏe tinh thần",
         "child6": "Khám nha khoa"
     },
-
     "menu": {
         "admin": {
             "manage-user": "Người dùng",
@@ -35,9 +34,11 @@
             "manage-specialty": "Quản lý chuyên khoa",
             "handbook": "Cẩm nang",
             "manage-handbook": "Quản lý cẩm nang"
+        },
+        "doctor": {
+            "manage-schedule": "Quản lý kế hoạch khám bệnh"
         }
     },
-
     "manage-user": {
         "add": "Thêm mới người dùng",
         "email": "Email",

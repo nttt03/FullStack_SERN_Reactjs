@@ -11,7 +11,6 @@
         "support": "Support",
         "welcome": "Welcome"
     },
-
     "banner": {
         "title1": "MEDICAL FOUNDATION",
         "title2": "COMPREHENSIVE HEALTH CARE",
@@ -22,7 +21,6 @@
         "child5": "Mental health",
         "child6": "Dental examination"
     },
-
     "menu": {
         "admin": {
             "manage-user": "User system",
@@ -36,9 +34,11 @@
             "manage-specialty": "Manage speciality",
             "handbook": "Handbook",
             "manage-handbook": "Manage handbook"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Doctor's schedule"
         }
     },
-
     "manage-user": {
         "add": "Add new user",
         "email": "Email",
