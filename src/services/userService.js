@@ -1,7 +1,7 @@
 import axios from "../axios";
 
 const handleLoginApi = (userEmail, userPassword) => {
-    return axios.post('/api/login', {email: userEmail, password: userPassword})
+    return axios.post('/api/login', { email: userEmail, password: userPassword })
 }
 
 const getAllUsers = (inputId) => {
@@ -45,6 +45,7 @@ const getDetailInforDoctor = (inputId) => {
     return axios.get(`/api/get-detail-doctor-by-id?id=${inputId}`)
 }
 
-export { handleLoginApi, getAllUsers, createNewUserService, deleteUserService, editUserService, getAllCodeService,
-    getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService, getDetailInforDoctor, 
- }
+export {
+    handleLoginApi, getAllUsers, createNewUserService, deleteUserService, editUserService, getAllCodeService,
+    getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService, getDetailInforDoctor,
+}

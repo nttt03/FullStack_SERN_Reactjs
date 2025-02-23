@@ -1,21 +1,22 @@
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserService, getAllUsers, deleteUserService, editUserService,
-    getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService, 
- } from '../../services/userService';
+import {
+    getAllCodeService, createNewUserService, getAllUsers, deleteUserService, editUserService,
+    getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService,
+} from '../../services/userService';
 import { toast } from 'react-toastify';
 import { dispatch } from '../../redux';
 
 export const fetchGenderStart = () => {
     return async (dispatch, getState) => {
         try {
-            dispatch({type: actionTypes.FETCH_GENDER_START})
+            dispatch({ type: actionTypes.FETCH_GENDER_START })
 
-            let res = await getAllCodeService("GENDER"); 
+            let res = await getAllCodeService("GENDER");
             if (res && res.errCode === 0) {
                 dispatch(fetchGenderSuccess(res.data));
             } else {
                 dispatch(fetchGenderFailed());
-            }   
+            }
         } catch (e) {
             dispatch(fetchGenderFailed());
             console.log('fetchGenderStart error: ', e);
@@ -38,12 +39,12 @@ export const fetchPositionStart = () => {
     return async (dispatch, getState) => {
         try {
 
-            let res = await getAllCodeService("POSITION"); 
+            let res = await getAllCodeService("POSITION");
             if (res && res.errCode === 0) {
                 dispatch(fetchPositionSuccess(res.data));
             } else {
                 dispatch(fetchPositionFailed());
-            }   
+            }
         } catch (e) {
             dispatch(fetchPositionFailed());
             console.log('fetchPositionFailed error: ', e);
@@ -65,12 +66,12 @@ export const fetchPositionFailed = () => ({
 export const fetchRoleStart = () => {
     return async (dispatch, getState) => {
         try {
-            let res = await getAllCodeService("ROLE"); 
+            let res = await getAllCodeService("ROLE");
             if (res && res.errCode === 0) {
                 dispatch(fetchRoleSuccess(res.data));
             } else {
                 dispatch(fetchRoleFailed());
-            }   
+            }
         } catch (e) {
             dispatch(fetchRoleFailed());
             console.log('fetchRoleFailed error: ', e);
@@ -91,7 +92,7 @@ export const fetchRoleFailed = () => ({
 export const createNewUser = (data) => {
     return async (dispatch, getState) => {
         try {
-            let res = await createNewUserService(data); 
+            let res = await createNewUserService(data);
             console.log('check create user redux: ', res)
             if (res && res.errCode === 0) {
                 toast.success('Create new user success!')
@@ -99,7 +100,7 @@ export const createNewUser = (data) => {
                 dispatch(fetchAllUsersStart());
             } else {
                 dispatch(saveUserFailed());
-            }   
+            }
         } catch (e) {
             dispatch(saveUserFailed());
             console.log('saveUserFailed error: ', e);
@@ -120,7 +121,7 @@ export const fetchAllUsersStart = () => {
     return async (dispatch, getState) => {
         try {
             let res = await getAllUsers('ALL');
-            if(res && res.errCode === 0) {
+            if (res && res.errCode === 0) {
                 dispatch(fetchAllUsersSuccess(res.users.reverse()))
             } else {
                 dispatch(fetchAllUsersFailed());
@@ -143,7 +144,7 @@ export const fetchAllUsersFailed = () => ({
 
 // deleteUser redux
 export const deleteUserStart = (userId) => {
-    return async(dispatch, getState) => {
+    return async (dispatch, getState) => {
         try {
             let res = await deleteUserService(userId);
             if (res && res.errCode === 0) {
@@ -173,7 +174,7 @@ export const deleteUserFailed = () => ({
 // edit user
 // deleteUser redux
 export const editUserStart = (data) => {
-    return async(dispatch, getState) => {
+    return async (dispatch, getState) => {
         try {
             let res = await editUserService(data);
             if (res && res.errCode === 0) {
@@ -202,7 +203,7 @@ export const editUserFailed = () => ({
 
 //
 export const fetchTopDoctor = () => {
-    return async(dispatch, getState) => {
+    return async (dispatch, getState) => {
         try {
             let res = await getTopDoctorHomeService('');
             console.log('limit doctor: ', res)
@@ -227,7 +228,7 @@ export const fetchTopDoctor = () => {
 
 //
 export const fetchAllDoctors = () => {
-    return async(dispatch, getState) => {
+    return async (dispatch, getState) => {
         try {
             let res = await getAllDoctors();
             if (res && res.errCode === 0) {
@@ -251,7 +252,7 @@ export const fetchAllDoctors = () => {
 
 //
 export const saveDetailDoctor = (data) => {
-    return async(dispatch, getState) => {
+    return async (dispatch, getState) => {
         try {
             let res = await saveDetailDoctorService(data);
             if (res && res.errCode === 0) {
@@ -270,6 +271,30 @@ export const saveDetailDoctor = (data) => {
             console.log('SAVE_DETAIL_DOCTOR_FAILED: ', e)
             dispatch({
                 type: actionTypes.SAVE_DETAIL_DOCTOR_FAILED
+            })
+        }
+    }
+}
+
+//
+export const fetchAllScheduleTime = () => {
+    return async (dispatch, getState) => {
+        try {
+            let res = await getAllCodeService('TIME');
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+                    dataTime: res.data
+                })
+            } else {
+                dispatch({
+                    type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED
+                })
+            }
+        } catch (e) {
+            console.log('FETCH_ALLCODE_SCHEDULE_TIME_FAILED: ', e)
+            dispatch({
+                type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED
             })
         }
     }

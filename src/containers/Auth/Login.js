@@ -41,25 +41,25 @@ class Login extends Component {
 
         try {
             let data = await handleLoginApi(this.state.username, this.state.password);
-            if(data && data.errCode !== 0){
+            if (data && data.errCode !== 0) {
                 this.setState({
                     errMessage: data.message
                 })
             }
-            if(data && data.errCode === 0){
+            if (data && data.errCode === 0) {
                 this.props.userLoginSuccess(data.user)
             }
         } catch (e) {
             // console.log(e);
-            if(e.response) {
-                if(e.response.data) {
+            if (e.response) {
+                if (e.response.data) {
                     this.setState({
                         errMessage: e.response.data.message
                     })
                 }
             }
         }
-        
+
     }
 
     handleShowHidePassword = () => {
@@ -69,44 +69,50 @@ class Login extends Component {
         })
     }
 
+    handleKeyDown = (event) => {
+        if (event.key === 'Enter' || event.keyCode === 13) {
+            this.handleLogin();
+        }
+    }
+
     render() {
         // JSX
         return (
             <div className='login-background'>
                 <div className='login-container'>
                     <div className='login-content row'>
-                        <div className='col-12 text-login'>Login</div>  
+                        <div className='col-12 text-login'>Login</div>
                         <div className='col-12 form-group login-input'>
                             <label>Username:</label>
-                            <input type='text' 
-                                className='form-control' 
+                            <input type='text'
+                                className='form-control'
                                 placeholder='Enter your username'
                                 value={this.state.username}
-                                onChange={(event) => {this.handleOnChangeUsername(event)}} 
+                                onChange={(event) => { this.handleOnChangeUsername(event) }}
                             />
                         </div>
                         <div className='col-12 form-group login-input'>
                             <label>Password:</label>
                             <div className='custom-input-password'>
-                                <input type={this.state.isShowPassword ? 'text' : 'password'} 
-                                    className='form-control' 
+                                <input type={this.state.isShowPassword ? 'text' : 'password'}
+                                    className='form-control'
                                     placeholder='Enter your password'
-                                    // value={this.state.password}
-                                    onChange={(event) => {this.handleOnChangePassword(event)}} 
+                                    onChange={(event) => { this.handleOnChangePassword(event) }}
+                                    onKeyDown={(event) => { this.handleKeyDown(event) }}
                                 />
                                 {/* <i class="fas fa-eye-slash"></i> */}
                                 <span
-                                    onClick={() => {this.handleShowHidePassword()}}
+                                    onClick={() => { this.handleShowHidePassword() }}
                                 ><i className={this.state.isShowPassword ? "fas fa-eye" : "fas fa-eye-slash"}></i></span>
                             </div>
-                            
+
                         </div>
-                        <div className='col-12' style={{color: 'red'}}>
+                        <div className='col-12' style={{ color: 'red' }}>
                             {this.state.errMessage}
                         </div>
                         <div className='col-12'>
                             <button className='btn-login'
-                                onClick={() => {this.handleLogin()}}
+                                onClick={() => { this.handleLogin() }}
                             >
                                 Login
                             </button>
@@ -122,7 +128,7 @@ class Login extends Component {
                             <i className="fab fa-facebook-f facebook"></i>
                         </div>
                     </div>
-                </div>           
+                </div>
             </div>
         )
     }
