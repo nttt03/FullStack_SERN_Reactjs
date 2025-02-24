@@ -16,8 +16,18 @@
         //justify-content: center;
 
         .btn-schedule {
-            border : 1px solid #ccc;
-            padding: 5px 15px;
+            outline   : none;
+            box-shadow: none;
+            border    : 1px solid #ccc;
+            padding   : 5px 15px;
+
+            &.active {
+                border          : 1px solid #f8cb03;
+                background-color: #f8cb03;
+                color           : #2f2e2e;
+                outline         : none;
+                box-shadow      : none;
+            }
         }
     }
 
