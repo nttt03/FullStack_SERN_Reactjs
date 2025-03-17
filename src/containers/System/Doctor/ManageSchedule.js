@@ -140,7 +140,7 @@ class ManageSchedule extends Component {
 
         // console.log('check state khi click lưu thông tin:', this.state)
         // console.log('check result khi click lưu thông tin:', result)
-        console.log('check saveBulkScheduleDoctor khi click lưu:', res)
+        // console.log('check saveBulkScheduleDoctor khi click lưu:', res)
     }
 
     render() {
@@ -169,7 +169,8 @@ class ManageSchedule extends Component {
                                 className='form-control'
                                 onChange={this.handleOnChangeDatePicker}
                                 value={this.state.currentDate}
-                                minDate={new Date()}
+                                minDate={moment().startOf('day').toDate()}
+
                             />
                         </div>
                         <div className='col-12 pick-hour-container'>
