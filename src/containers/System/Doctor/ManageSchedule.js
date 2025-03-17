@@ -137,6 +137,12 @@ class ManageSchedule extends Component {
             doctorId: selectedDoctor.value,
             formatedDate: formatedDate
         });
+        if (res && res.errCode === 0) {
+            toast.success('Save schedule successfully!');
+        } else {
+            toast.error('Error saveBulkScheduleDoctor');
+            console.log('Error saveBulkScheduleDoctor >>> res: ', res);
+        }
 
         // console.log('check state khi click lưu thông tin:', this.state)
         // console.log('check result khi click lưu thông tin:', result)

@@ -1,5 +1,6 @@
 .doctor-schedule-container {
-    border-right: 1px solid #0fb406;
+    border-right: 1px solid #c0c4c4;
+    height      : 100%;
 
     .all-schedule {
         select {
@@ -31,25 +32,45 @@
         }
 
         .time-content {
-            display  : flex;
-            gap      : 15px;
-            flex-wrap: wrap;
 
-            button {
-                font-weight     : 600;
-                color           : #3d3d3d;
-                padding         : 8px 10px;
-                border          : none;
-                outline         : none;
-                background-color: #fff04b;
-                min-width       : 120px;
-                border-radius   : 3px;
-                transition      : background-color 0.3s ease, color 0.3s ease;
+            .time-content-btns {
+                display  : flex;
+                gap      : 15px;
+                flex-wrap: wrap;
 
-                &:hover {
-                    background-color: #45c3d2;
-                    color           : #fff;
+                button {
+                    font-weight     : 600;
+                    color           : #3d3d3d;
+                    padding         : 8px 10px;
+                    border          : none;
+                    outline         : none;
+                    background-color: #fff04b;
+                    border-radius   : 3px;
+                    transition      : background-color 0.3s ease, color 0.3s ease;
+
+                    &:hover {
+                        background-color: #45c3d2;
+                        color           : #fff;
+                    }
                 }
+
+                .btn-vie {
+                    min-width: 120px;
+                }
+
+                .btn-en {
+                    min-width: 170px;
+                }
+
+                .no-schedule {
+                    color        : #f50404;
+                    font-size    : 15px;
+                    // font-style: italic;
+                }
+            }
+
+            .book-free {
+                margin-top: 15px;
             }
         }
 
