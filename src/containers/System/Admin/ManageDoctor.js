@@ -153,23 +153,68 @@ class ManageDoctor extends Component {
         console.log('handleSaveContentMarkdown state', this.state);
     }
 
+
+
     handleChangeSelect = async (selectedOption) => {
         this.setState({ selectedOption });
-        let res = await getDetailInforDoctor(selectedOption.value)
+        let { listPrice, listPayment, listProvince } = this.state;
+        let res = await getDetailInforDoctor(selectedOption.value);
+        // console.log("API Response:", res);
         if (res && res.errCode === 0 && res.data && res.data.Markdown) {
             let markdown = res.data.Markdown;
+
+            let addressClinic = '', nameClinic = '', note = '', paymentId = '', priceId = '', provinceId = '',
+                selectedPrice = '', selectedPayment = '', selectedProvince = '';
+
+            if (res.data.Doctor_Infor) {
+                addressClinic = res.data.Doctor_Infor.addressClinic;
+                nameClinic = res.data.Doctor_Infor.nameClinic;
+                note = res.data.Doctor_Infor.note;
+
+                paymentId = res.data.Doctor_Infor.paymentId;
+                priceId = res.data.Doctor_Infor.priceId;
+                provinceId = res.data.Doctor_Infor.provinceId;
+
+                selectedPayment = listPayment.find(item => {
+                    if (item.value === paymentId) return item;
+                })
+                selectedPrice = listPrice.find(item => {
+                    if (item.value === priceId) return item;
+                })
+                selectedProvince = listProvince.find(item => {
+                    // cách viết khác
+                    return item && item.value === provinceId;
+                })
+
+                // console.log('check findItem', selectedPayment, listPayment);
+
+            }
+
             this.setState({
                 contentHTML: markdown.contentHTML,
                 contentMarkdown: markdown.contentMarkdown,
                 description: markdown.description,
-                hasOlData: true
+                hasOlData: true,
+                addressClinic: addressClinic,
+                nameClinic: nameClinic,
+                note: note,
+                selectedPrice: selectedPrice,
+                selectedPayment: selectedPayment,
+                selectedProvince: selectedProvince
             })
+
         } else {
             this.setState({
                 contentHTML: '',
                 contentMarkdown: '',
                 description: '',
-                hasOlData: false
+                hasOlData: false,
+                addressClinic: '',
+                nameClinic: '',
+                note: '',
+                selectedPrice: '',
+                selectedPayment: '',
+                selectedProvince: ''
             })
         }
         console.log(`Option selected res:`, res)
