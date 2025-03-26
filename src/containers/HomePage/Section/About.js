@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './MedicalFacility.scss'
 import Slider from 'react-slick';
 import specialtyImg from '../../../assets/specialty/image.png';
+import { FormattedMessage } from 'react-intl';
 
 class About extends Component {
 
@@ -10,32 +11,22 @@ class About extends Component {
         return (
             <div className='section-share section-about'>
                 <div className='section-about-header'>
-                    Truyền thông nói gì về Booking Care
-                </div>  
+                    <FormattedMessage id="homepage.about" />
+                </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
-                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/djCMhhivZK8?list=RDdjCMhhivZK8" 
-                        title="Say Yes (Vietnamese Version)" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>   
-                    <div className='content-right'>
-                        Mình cùng chạy trốn thanh âm xô bồ.
-                        Thiên nhiên đang mong đợi.
-                        Về với những lớp sóng xô.
-                        Xa hơn là chân trời.
-                        Con thuyền cứ thấp thoáng nhấp nhô.
-                        Nhìn như đôi môi em cười.
-                        Chèo đến khi ta xa bờ.
-                        Rồi ngưng tay cho nó trôi.
-                        Không muốn bơi.
-                        Để chìm đắm trong ánh mắt nàng.
-                        Hoàng hôn buông rồi.
-                        Rảo bước trên lớp cát vàng.
-                        Dắt nàng đến nơi vắng người.
-                        Nàng im lặng thế là biết rồi.
+                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/1sHF_Fa9-0E"
+                            title="CÀ PHÊ KHỞI NGHIỆP VTV1 - BOOKING CARE - KHÁM BỆNH THỜI CÔNG NGHỆ"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                </div>      
+                    <div className='content-right'>
+                        CareFlow là nền tảng đặt lịch khám bệnh trực tuyến hàng đầu tại Việt Nam, giúp kết nối bệnh nhân
+                        với các bác sĩ, phòng khám và bệnh viện uy tín trên toàn quốc. Với hệ thống đặt lịch thông minh,
+                        CareFlow giúp người dùng dễ dàng lựa chọn bác sĩ theo chuyên khoa, địa điểm và thời gian phù hợp,
+                        giúp tiết kiệm thời gian và nâng cao trải nghiệm khám chữa bệnh.
+                    </div>
+                </div>
             </div>
         );
     }

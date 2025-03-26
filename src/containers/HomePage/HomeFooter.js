@@ -6,8 +6,8 @@ class HomeFooter extends Component {
     render() {
         return (
             <div className='home-footer'>
-                <p>&copy; 2024 Booking Care</p>
-                
+                <p>&copy; 2024 Care Flow</p>
+
             </div>
         );
     }

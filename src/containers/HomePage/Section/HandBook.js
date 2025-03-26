@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './MedicalFacility.scss'
 import Slider from 'react-slick';
 import specialtyImg from '../../../assets/specialty/image.png';
+import { FormattedMessage } from 'react-intl';
 
 class HandBook extends Component {
 
@@ -12,8 +13,8 @@ class HandBook extends Component {
                 <div className='section-container'>
 
                     <div className='section-header'>
-                        <span>Cẩm nang</span>
-                        <button className='btn btn-secondary px-3'>Xem thêm</button>
+                        <span><FormattedMessage id="homepage.handbook" /></span>
+                        <button className='btn btn-secondary px-3'><FormattedMessage id="homepage.more-infor" /></button>
                     </div>
 
                     <div className='section-body'>
@@ -47,7 +48,7 @@ class HandBook extends Component {
 
                 </div>
 
-                
+
             </div>
         );
     }

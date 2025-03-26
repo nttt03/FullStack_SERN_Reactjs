@@ -56,6 +56,10 @@
     },
     "homepage": {
         "outstanding-doctor": "Doctor featured last week",
+        "specialty-popular": "Popular specialty",
+        "medical-facility-outstanding": "Medical facility outstanding",
+        "handbook": "Handbook",
+        "about": "What the media says about Care Flow",
         "more-infor": "See more"
     },
     "manage-schedule": {
