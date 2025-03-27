@@ -44,6 +44,11 @@
             justify-content: space-between;
 
             .child-content {
+                :hover {
+                    // color : #0e87f8;
+                    cursor: pointer;
+                }
+
                 .subs-title {
                     font-weight: 400;
                     font-size  : 12px;

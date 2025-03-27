@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './DefaultClass.scss';
+import './DetailSpecialty.scss';
+import HomeHeader from '../../HomePage/HomeHeader';
 
-class DefaultClass extends Component {
+class DetailSpecialty extends Component {
 
     constructor(props) {
         super(props);
@@ -22,7 +23,10 @@ class DefaultClass extends Component {
 
     render() {
         return (
-            <div></div>
+            <>
+                <HomeHeader />
+                <div className='detail-specialty-container'>Detail Specialty...........</div>
+            </>
         );
     }
 }
@@ -38,4 +42,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultClass);
+export default connect(mapStateToProps, mapDispatchToProps)(DetailSpecialty);

@@ -110,6 +110,8 @@
             "clinic-name": "Clinic name",
             "clinic-address": "Clinic address",
             "note": "Note",
+            "specialty": "Select Specialty",
+            "clinic": "Select Clinic",
             "add": "Create infor",
             "save": "Save infor"
         }

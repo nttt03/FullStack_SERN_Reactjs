@@ -83,10 +83,10 @@ class Login extends Component {
                     <div className='login-content row'>
                         <div className='col-12 text-login'>Login</div>
                         <div className='col-12 form-group login-input'>
-                            <label>Username:</label>
+                            <label>Email:</label>
                             <input type='text'
                                 className='form-control'
-                                placeholder='Enter your username'
+                                placeholder='Enter your email'
                                 value={this.state.username}
                                 onChange={(event) => { this.handleOnChangeUsername(event) }}
                             />
@@ -118,7 +118,7 @@ class Login extends Component {
                             </button>
                         </div>
                         <div className='col-12'>
-                            <span className='forgot-password'>Forgot your password?</span>
+                            <p className='forgot-password'>Forgot your password?</p>
                         </div>
                         <div className='col-12 text-center mt-3'>
                             <span className='text-center'>Or Login with:</span>

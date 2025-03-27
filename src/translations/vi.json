@@ -110,6 +110,8 @@
             "clinic-name": "Tên phòng khám",
             "clinic-address": "Địa chỉ phòng khám",
             "note": "Ghi chú",
+            "specialty": "Chọn Chuyên khoa",
+            "clinic": "Chọn Phòng khám",
             "add": "Tạo thông tin",
             "save": "Lưu thông tin"
         }
