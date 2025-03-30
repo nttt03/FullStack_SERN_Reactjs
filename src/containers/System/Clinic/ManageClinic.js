@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import './ManageSpecialty.scss';
+import './ManageClinic.scss';
 import markdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import { CommonUtils } from '../../../utils';
-import { createNewSpecialty } from '../../../services/userService';
+import { createNewClinic } from '../../../services/userService';
 import { toast } from 'react-toastify';
 import { FormattedMessage } from 'react-intl';
 
 const mdParser = new markdownIt();
 
-class ManageSpecialty extends Component {
+class ManageClinic extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             name: '',
+            address: '',
             imageBase64: '',
             descriptionHTML: '',
             descriptionMarkdown: '',
@@ -59,18 +60,19 @@ class ManageSpecialty extends Component {
 
     }
 
-    handleSaveSpecialty = async () => {
-        let res = await createNewSpecialty(this.state);
+    handleSaveClinic = async () => {
+        let res = await createNewClinic(this.state);
         if (res && res.errCode === 0) {
-            toast.success('Add new specialty successfully!');
+            toast.success('Add new clinic successfully!');
             this.setState({
                 name: '',
+                address: '',
                 imageBase64: '',
                 descriptionHTML: '',
                 descriptionMarkdown: '',
             })
         } else {
-            toast.error('Failed to add new specialty!');
+            toast.error('Failed to add new clinic!');
             console.log('check res-err: ', res);
         }
     }
@@ -79,19 +81,25 @@ class ManageSpecialty extends Component {
         return (
             <div>
                 <div className='manage-spetialty-container'>
-                    <div className='ms-title'><FormattedMessage id='admin.manage-specialty.title' /></div>
+                    <div className='ms-title'><FormattedMessage id='admin.manage-clinic.title' /></div>
 
                     <div className='add-new-spectialty row'>
                         <div className='col-6'>
-                            <label><FormattedMessage id='admin.manage-specialty.name-specialty' /></label>
+                            <label><FormattedMessage id='admin.manage-clinic.name-clinic' /></label>
                             <input className='form-control' type='text' value={this.state.name}
                                 onChange={(e) => { this.handleOnchangeInput(e, 'name') }}
                             />
                         </div>
                         <div className='col-6'>
-                            <label><FormattedMessage id='admin.manage-specialty.img-specialty' /></label>
+                            <label><FormattedMessage id='admin.manage-clinic.img-clinic' /></label>
                             <input className='form-control-file' type='file'
                                 onChange={(e) => { this.handleOnChangeImage(e) }}
+                            />
+                        </div>
+                        <div className='col-6 form-group'>
+                            <label><FormattedMessage id='admin.manage-clinic.address' /></label>
+                            <input className='form-control' type='text' value={this.state.address}
+                                onChange={(e) => { this.handleOnchangeInput(e, 'address') }}
                             />
                         </div>
                         <div className='col-12 mt-3'>
@@ -104,8 +112,8 @@ class ManageSpecialty extends Component {
                         </div>
                         <div className='col-12'>
                             <button className='btn-save-specialty'
-                                onClick={() => { this.handleSaveSpecialty() }}
-                            ><FormattedMessage id='admin.manage-specialty.save' /></button>
+                                onClick={() => { this.handleSaveClinic() }}
+                            ><FormattedMessage id='admin.manage-clinic.save' /></button>
                         </div>
                     </div>
 
@@ -126,4 +134,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageSpecialty);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageClinic);

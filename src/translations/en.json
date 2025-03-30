@@ -114,6 +114,19 @@
             "clinic": "Select Clinic",
             "add": "Create infor",
             "save": "Save infor"
+        },
+        "manage-specialty": {
+            "title": "Manage specialty",
+            "name-specialty": "Name specialty",
+            "img-specialty": "Image specialty",
+            "save": "Save"
+        },
+        "manage-clinic": {
+            "title": "Manage clinic",
+            "name-clinic": "Name clinic",
+            "img-clinic": "Image clinic",
+            "address": "Address clinic",
+            "save": "Save"
         }
     }
 }

@@ -114,6 +114,19 @@
             "clinic": "Chọn Phòng khám",
             "add": "Tạo thông tin",
             "save": "Lưu thông tin"
+        },
+        "manage-specialty": {
+            "title": "Quản lý chuyên khoa",
+            "name-specialty": "Tên chuyên khoa",
+            "img-specialty": "Ảnh chuyên khoa",
+            "save": "Lưu"
+        },
+        "manage-clinic": {
+            "title": "Quản lý phòng khám",
+            "name-clinic": "Tên phòng khám",
+            "img-clinic": "Ảnh phòng khám",
+            "address": "Địa chỉ phòng khám",
+            "save": "Lưu"
         }
     }
 }
