@@ -2,12 +2,36 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './MedicalFacility.scss'
 import Slider from 'react-slick';
-import specialtyImg from '../../../assets/specialty/image.png';
 import { FormattedMessage } from 'react-intl';
+import { getAllClinic } from '../../../services/userService';
+import { withRouter } from 'react-router';
 
 class HomePage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataClinics: [],
+        }
+    }
+
+    async componentDidMount() {
+        let res = await getAllClinic();
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataClinics: res.data ? res.data : [],
+            })
+        }
+        // console.log('check res clinic', res);
+    }
+
+    handleViewDetailClinic = (clinic) => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-clinic/${clinic.id}`)
+        }
+    }
 
     render() {
+        let { dataClinics } = this.state;
         return (
             <div className='section-share section-medical-facility'>
                 <div className='section-container'>
@@ -19,30 +43,21 @@ class HomePage extends Component {
 
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 1</span>
-                            </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 2</span>
-                            </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 3</span>
-                            </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 4</span>
-                            </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 5</span>
-                            </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 6</span>
-                            </div>
+                            {dataClinics && dataClinics.length > 0 &&
+                                dataClinics.map((item, index) => {
+                                    return (
+                                        <div className='section-customize medical-facility-child'
+                                            key={index}
+                                            onClick={() => this.handleViewDetailClinic(item)}
+                                        >
+                                            <div className='customize-border-clinic'>
+                                                <img className='bg-image-clinic' src={item.image} />
+                                                <span className='name-clinic'>{item.name}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </Slider>
                     </div>
 
@@ -66,4 +81,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomePage));
