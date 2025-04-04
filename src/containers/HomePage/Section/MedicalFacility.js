@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './MedicalFacility.scss'
+import './Slider.scss'
 import Slider from 'react-slick';
 import { FormattedMessage } from 'react-intl';
 import { getAllClinic } from '../../../services/userService';
@@ -46,13 +46,13 @@ class HomePage extends Component {
                             {dataClinics && dataClinics.length > 0 &&
                                 dataClinics.map((item, index) => {
                                     return (
-                                        <div className='section-customize medical-facility-child'
+                                        <div className='section-customize slider-child'
                                             key={index}
                                             onClick={() => this.handleViewDetailClinic(item)}
                                         >
-                                            <div className='customize-border-clinic'>
-                                                <img className='bg-image-clinic' src={item.image} />
-                                                <span className='name-clinic'>{item.name}</span>
+                                            <div className='customize-border-slider'>
+                                                <img className='bg-image-slider' src={item.image} />
+                                                <span className='name-slider'>{item.name}</span>
                                             </div>
                                         </div>
                                     )

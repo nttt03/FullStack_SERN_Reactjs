@@ -1,4 +1,4 @@
-.medical-facility-child {
+.slider-child {
     display        : flex;
     flex-direction : column;
     align-items    : center;
@@ -11,14 +11,14 @@
         color: #4991f7;
     }
 
-    .customize-border-clinic {
+    .customize-border-slider {
         border       : 1px solid #ccccc9;
         border-radius: 3px;
         padding      : 15px;
         margin       : 5px;
     }
 
-    .bg-image-clinic {
+    .bg-image-slider {
         width        : 100%;
         height       : 180px;
         object-fit   : contain;
@@ -27,7 +27,7 @@
         margin-bottom: 10px;
     }
 
-    .name-clinic {
+    .name-slider {
         font-size    : 16px;
         text-align   : center;
         max-width    : 180px;

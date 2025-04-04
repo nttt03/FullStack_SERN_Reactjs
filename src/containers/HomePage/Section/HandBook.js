@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './MedicalFacility.scss'
+import './Slider.scss'
 import Slider from 'react-slick';
-import specialtyImg from '../../../assets/specialty/image.png';
+import handBook from '../../../assets/Hand-book.png';
 import { FormattedMessage } from 'react-intl';
 
 class HandBook extends Component {
@@ -19,29 +19,41 @@ class HandBook extends Component {
 
                     <div className='section-body'>
                         <Slider {...this.props.settings}>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 1</span>
+                            <div className='section-customize slider-child'>
+                                <div className='customize-border-slider'>
+                                    <img className='bg-image-slider' src={handBook} />
+                                    <span>Cẩm nang 1</span>
+                                </div>
                             </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 2</span>
+                            <div className='section-customize slider-child'>
+                                <div className='customize-border-slider'>
+                                    <img className='bg-image-slider' src={handBook} />
+                                    <span>Cẩm nang 2</span>
+                                </div>
                             </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 3</span>
+                            <div className='section-customize slider-child'>
+                                <div className='customize-border-slider'>
+                                    <img className='bg-image-slider' src={handBook} />
+                                    <span>Cẩm nang 3</span>
+                                </div>
                             </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 4</span>
+                            <div className='section-customize slider-child'>
+                                <div className='customize-border-slider'>
+                                    <img className='bg-image-slider' src={handBook} />
+                                    <span>Cẩm nang 4</span>
+                                </div>
                             </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 5</span>
+                            <div className='section-customize slider-child'>
+                                <div className='customize-border-slider'>
+                                    <img className='bg-image-slider' src={handBook} />
+                                    <span>Cẩm nang 5</span>
+                                </div>
                             </div>
-                            <div className='section-customize'>
-                                <img className='bg-image' src={specialtyImg} />
-                                <span>Hệ thống y tế An Việt 6</span>
+                            <div className='section-customize slider-child'>
+                                <div className='customize-border-slider'>
+                                    <img className='bg-image-slider' src={handBook} />
+                                    <span>Cẩm nang 6</span>
+                                </div>
                             </div>
                         </Slider>
                     </div>
