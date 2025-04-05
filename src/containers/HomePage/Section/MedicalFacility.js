@@ -24,6 +24,12 @@ class HomePage extends Component {
         // console.log('check res clinic', res);
     }
 
+    handleViewListClinic = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-clinic`)
+        }
+    }
+
     handleViewDetailClinic = (clinic) => {
         if (this.props.history) {
             this.props.history.push(`/detail-clinic/${clinic.id}`)
@@ -38,7 +44,9 @@ class HomePage extends Component {
 
                     <div className='section-header'>
                         <span><FormattedMessage id="homepage.medical-facility-outstanding" /></span>
-                        <button className='btn btn-secondary px-3'><FormattedMessage id="homepage.more-infor" /></button>
+                        <button className='btn btn-secondary px-3'
+                            onClick={() => this.handleViewListClinic()}><FormattedMessage id="homepage.more-infor" />
+                        </button>
                     </div>
 
                     <div className='section-body'>

@@ -24,6 +24,12 @@ class Specialty extends Component {
         }
     }
 
+    handleViewListSpecialty = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-specialty`)
+        }
+    }
+
     handleViewDetailSpecialty = (item) => {
         // console.log('check view detail doctor....', doctor);
         if (this.props.history) {
@@ -33,14 +39,16 @@ class Specialty extends Component {
 
     render() {
         let { dataSpecialty } = this.state;
-        console.log('check state chuyên khoa: ', this.state)
+        // console.log('check state chuyên khoa: ', this.state)
         return (
             <div className='section-share section-specialty'>
                 <div className='section-container'>
 
                     <div className='section-header'>
                         <span><FormattedMessage id="homepage.specialty-popular" /></span>
-                        <button className='btn btn-secondary px-3'><FormattedMessage id="homepage.more-infor" /></button>
+                        <button className='btn btn-secondary px-3'
+                            onClick={() => this.handleViewListSpecialty()}><FormattedMessage id="homepage.more-infor" />
+                        </button>
                     </div>
 
                     <div className='section-body'>

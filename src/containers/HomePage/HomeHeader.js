@@ -20,6 +20,24 @@ class HomeHeader extends Component {
         }
     }
 
+    handleViewListSpecialty = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-specialty`)
+        }
+    }
+
+    handleViewListClinic = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-clinic`)
+        }
+    }
+
+    handleViewListDoctor = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-doctor`)
+        }
+    }
+
     render() {
         // console.log('check: ', this.props)
 
@@ -34,15 +52,21 @@ class HomeHeader extends Component {
                             <div className='header-logo' onClick={() => this.returnToHome()}></div>
                         </div>
                         <div className='center-content'>
-                            <div className='child-content'>
+                            <div className='child-content'
+                                onClick={() => this.handleViewListSpecialty()}
+                            >
                                 <div><b><FormattedMessage id="homeheader.speciality" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.search-doctor" /></div>
                             </div>
-                            <div className='child-content'>
+                            <div className='child-content'
+                                onClick={() => this.handleViewListClinic()}
+                            >
                                 <div><b><FormattedMessage id="homeheader.health-facility" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.select-room" /></div>
                             </div>
-                            <div className='child-content'>
+                            <div className='child-content'
+                                onClick={() => this.handleViewListDoctor()}
+                            >
                                 <div><b><FormattedMessage id="homeheader.doctor" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.select-doctor" /></div>
                             </div>

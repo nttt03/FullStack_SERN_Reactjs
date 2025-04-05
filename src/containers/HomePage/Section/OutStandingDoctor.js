@@ -35,9 +35,17 @@ class OutStandingDoctor extends Component {
         }
     }
 
+    handleViewListDoctor = () => {
+        if (this.props.history) {
+            this.props.history.push(`/list-doctor`)
+        }
+    }
+
+
     render() {
         // console.log('data topdotor: ', this.props.topDoctorsRedux)
         let arrDoctors = this.state.arrDoctors;
+        // console.log('arrDoctor: ', arrDoctors);
         let { language } = this.props;
         // arrDoctors = arrDoctors.concat(arrDoctors)
         return (
@@ -46,7 +54,10 @@ class OutStandingDoctor extends Component {
 
                     <div className='section-header'>
                         <span><FormattedMessage id="homepage.outstanding-doctor" /></span>
-                        <button className='btn btn-secondary px-3'><FormattedMessage id="homepage.more-infor" /></button>
+                        <button className='btn btn-secondary px-3'
+                            onClick={() => this.handleViewListDoctor()}
+                        ><FormattedMessage id="homepage.more-infor" />
+                        </button>
                     </div>
 
                     <div className='section-body'>
@@ -61,6 +72,10 @@ class OutStandingDoctor extends Component {
 
                                     let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName}`;
                                     let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                                    // Kiểm tra và hiển thị tên chuyên khoa, nếu không có thì hiển thị "Chưa xác định"
+                                    let specialtyName = item.Doctor_Infor && item.Doctor_Infor.Specialty && item.Doctor_Infor.Specialty.name
+                                        ? item.Doctor_Infor.Specialty.name
+                                        : "Chưa xác định";
                                     return (
                                         <div className='section-customize' key={index}
                                             onClick={() => this.handleViewDetailDoctor(item)}
@@ -74,7 +89,7 @@ class OutStandingDoctor extends Component {
                                                 </div>
                                                 <div className='position text-center'>
                                                     <div>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
-                                                    <div>Cơ xương khớp 0</div>
+                                                    <div>{specialtyName}</div>
                                                 </div>
                                             </div>
                                         </div>

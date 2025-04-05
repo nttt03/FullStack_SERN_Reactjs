@@ -1,0 +1,71 @@
+import React, { Component } from 'react';
+import { connect } from "react-redux";
+import './ListSpecialty.scss';
+import HomeHeader from '../../HomePage/HomeHeader';
+import HomeFooter from '../../HomePage/HomeFooter';
+import { getAllSpecialty } from '../../../services/userService';
+
+class ListSpecialty extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataSpecialty: []
+        };
+    }
+
+    async componentDidMount() {
+        const res = await getAllSpecialty();
+        console.log('check getAllSpecialty: ', res);
+        if (res && res.errCode === 0) {
+            this.setState({
+                dataSpecialty: res.data ? res.data : []
+            });
+        }
+    }
+
+    render() {
+        let { dataSpecialty } = this.state;
+
+        return (
+            <React.Fragment>
+                <HomeHeader />
+                <div className="list-specialty">
+                    <div className="container">
+                        <h2 className="list-specialty__title">Danh sách chuyên khoa</h2>
+                        <div className="row">
+                            {dataSpecialty && dataSpecialty.length > 0 &&
+                                dataSpecialty.map((item, index) => {
+                                    return (
+                                        <div key={index} className="col-md-3 col-sm-6 col-12">
+                                            <div className="list-specialty__content">
+                                                <div className="list-specialty__content__item">
+                                                    <div className="list-specialty__content__item__image">
+                                                        <img src={item.image} />
+                                                    </div>
+                                                    <div className="list-specialty__content__item__info">
+                                                        <div className="list-specialty__content__item__info__name">
+                                                            {item.name}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+                <HomeFooter />
+            </React.Fragment>
+        );
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        language: state.app.language,
+    };
+};
+
+export default connect(mapStateToProps)(ListSpecialty);

@@ -14,6 +14,9 @@ import HomePage from './HomePage/HomePage.js';
 import DetailDoctor from './Patient/Doctor/DetailDoctor.js';
 import DetailSpecialty from './Patient/Specialty/DetailSpecialty.js';
 import DetailClinic from './Patient/Clinic/DetailClinic.js';
+import ListSpecialty from './Patient/Specialty/ListSpecialty.js';
+import ListClinic from './Patient/Clinic/ListClinic.js';
+import ListDoctor from './Patient/Doctor/ListDoctor.js';
 
 
 import { CustomToastCloseButton } from '../components/CustomToast';
@@ -59,6 +62,10 @@ class App extends Component {
                                     <Route path={path.DETAIL_SPECIALTY} component={DetailSpecialty} />
                                     <Route path={path.DETAIL_CLINIC} component={DetailClinic} />
                                     <Route path={path.VERIFY_EMAIL_BOOKING} component={VerifyEmail} />
+
+                                    <Route path={path.LIST_SPECIALTY} component={ListSpecialty} />
+                                    <Route path={path.LIST_CLINIC} component={ListClinic} />
+                                    <Route path={path.LIST_DOCTOR} component={ListDoctor} />
 
                                 </Switch>
                             </CustomScrollbars>
