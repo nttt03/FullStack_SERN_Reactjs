@@ -24,6 +24,11 @@ class ListClinic extends Component {
         // console.log('check res clinic', res);
     }
 
+    handleViewDetailClinic = (clinic) => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-clinic/${clinic.id}`)
+        }
+    }
 
     render() {
         let { dataClinics } = this.state;
@@ -37,7 +42,9 @@ class ListClinic extends Component {
                             {dataClinics && dataClinics.length > 0 &&
                                 dataClinics.map((item, index) => {
                                     return (
-                                        <div key={index} className="col-md-3 col-sm-6 col-12">
+                                        <div key={index} className="col-md-3 col-sm-6 col-12"
+                                            onClick={() => this.handleViewDetailClinic(item)}
+                                        >
                                             <div className="list-clinic__content">
                                                 <div className="list-clinic__content__item">
                                                     <div className="list-clinic__content__item__image">

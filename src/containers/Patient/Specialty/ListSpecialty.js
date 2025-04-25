@@ -24,6 +24,12 @@ class ListSpecialty extends Component {
         }
     }
 
+    handleViewDetailSpecialty = (item) => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-specialty/${item.id}`)
+        }
+    }
+
     render() {
         let { dataSpecialty } = this.state;
 
@@ -37,7 +43,9 @@ class ListSpecialty extends Component {
                             {dataSpecialty && dataSpecialty.length > 0 &&
                                 dataSpecialty.map((item, index) => {
                                     return (
-                                        <div key={index} className="col-md-3 col-sm-6 col-12">
+                                        <div key={index} className="col-md-3 col-sm-6 col-12"
+                                            onClick={() => this.handleViewDetailSpecialty(item)}
+                                        >
                                             <div className="list-specialty__content">
                                                 <div className="list-specialty__content__item">
                                                     <div className="list-specialty__content__item__image">

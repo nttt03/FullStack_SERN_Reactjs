@@ -27,6 +27,12 @@ class ListDoctor extends Component {
         }
     }
 
+    handleViewDetailDoctor = (doctor) => {
+        if (this.props.history) {
+            this.props.history.push(`/detail-doctor/${doctor.id}`)
+        }
+    }
+
     render() {
         let arrDoctors = this.state.arrDoctors;
         const { language } = this.props;
