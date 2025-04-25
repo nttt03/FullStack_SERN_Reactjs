@@ -18,10 +18,7 @@ class About extends Component {
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div className='content-right'>
-                        CareFlow là nền tảng đặt lịch khám bệnh trực tuyến hàng đầu tại Việt Nam, giúp kết nối bệnh nhân
-                        với các bác sĩ, phòng khám và bệnh viện uy tín trên toàn quốc. Với hệ thống đặt lịch thông minh,
-                        CareFlow giúp người dùng dễ dàng lựa chọn bác sĩ theo chuyên khoa, địa điểm và thời gian phù hợp,
-                        giúp tiết kiệm thời gian và nâng cao trải nghiệm khám chữa bệnh.
+                        <FormattedMessage id="homepage.text-about" />
                     </div>
                 </div>
             </div>

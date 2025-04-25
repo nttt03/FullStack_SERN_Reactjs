@@ -4,6 +4,7 @@ import './ListSpecialty.scss';
 import HomeHeader from '../../HomePage/HomeHeader';
 import HomeFooter from '../../HomePage/HomeFooter';
 import { getAllSpecialty } from '../../../services/userService';
+import { FormattedMessage } from 'react-intl';
 
 class ListSpecialty extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class ListSpecialty extends Component {
                 <HomeHeader />
                 <div className="list-specialty">
                     <div className="container">
-                        <h2 className="list-specialty__title">Danh sách chuyên khoa</h2>
+                        <h2 className="list-specialty__title"><FormattedMessage id='homeheader.list-specialty' /></h2>
                         <div className="row">
                             {dataSpecialty && dataSpecialty.length > 0 &&
                                 dataSpecialty.map((item, index) => {

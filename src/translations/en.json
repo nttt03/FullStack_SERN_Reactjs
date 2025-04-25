@@ -6,10 +6,29 @@
         "select-room": "Choose hospital clinic",
         "doctor": "Doctor",
         "select-doctor": "Choose a good doctor",
-        "package": "Checkup package",
-        "check-health": "General health check",
+        "package": "Appointment schedule",
+        "check-health": "Check appointment schedule",
         "support": "Support",
-        "welcome": "Welcome"
+        "welcome": "Welcome",
+        "list-specialty": "All Specialties",
+        "list-clinic": "All Clinics",
+        "list-doctor": "Outstanding Doctor"
+    },
+    "homefooter": {
+        "company": "CareFlow Company",
+        "address": "📍 123 Technology Street, District 1, HCMC, Vietnam",
+        "phone": "📞 0123-456-789 (8AM - 8PM)",
+        "email": "📧 support@careflow.vn (7AM - 6PM)",
+        "policy": "Policy",
+        "policy_contact": "Partnership Contact",
+        "policy_digital": "Digital Transformation",
+        "policy_security": "Privacy Policy",
+        "policy_terms": "Terms of Service",
+        "partner": "Content Sponsors",
+        "partner_1": "Hello Doctor - \"Mental Health\"",
+        "partner_2": "Bernard Medical System - \"Specialized Medicine\"",
+        "partner_3": "Doctor Check - \"General Health\"",
+        "connect": "Connect with us"
     },
     "banner": {
         "title1": "MEDICAL FOUNDATION",
@@ -61,7 +80,8 @@
         "medical-facility-outstanding": "Medical facility outstanding",
         "handbook": "Handbook",
         "about": "What the media says about Care Flow",
-        "more-infor": "See more"
+        "more-infor": "See more",
+        "text-about": "CareFlow is the leading online medical appointment platform in Vietnam, connecting patients with reputable doctors, clinics and hospitals nationwide. With a smart appointment system, CareFlow helps users easily choose doctors according to their specialty, location and suitable time, helping to save time and improve the medical examination and treatment experience."
     },
     "manage-schedule": {
         "title": "Manage Doctor's schedule",

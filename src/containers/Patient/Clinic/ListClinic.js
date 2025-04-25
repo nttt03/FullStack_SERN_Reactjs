@@ -4,6 +4,7 @@ import './ListClinic.scss';
 import HomeHeader from '../../HomePage/HomeHeader';
 import HomeFooter from '../../HomePage/HomeFooter';
 import { getAllClinic } from '../../../services/userService';
+import { FormattedMessage } from 'react-intl';
 
 class ListClinic extends Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class ListClinic extends Component {
                 <HomeHeader />
                 <div className="list-clinic">
                     <div className="container">
-                        <h2 className="list-clinic__title">Danh sách Cơ sở y tế</h2>
+                        <h2 className="list-clinic__title"><FormattedMessage id='homeheader.list-clinic' /></h2>
                         <div className="row">
                             {dataClinics && dataClinics.length > 0 &&
                                 dataClinics.map((item, index) => {

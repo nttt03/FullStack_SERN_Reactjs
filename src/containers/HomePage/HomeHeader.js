@@ -38,6 +38,12 @@ class HomeHeader extends Component {
         }
     }
 
+    handleViewNewAppointment = () => {
+        if (this.props.history) {
+            this.props.history.push(`/new-appointment`)
+        }
+    }
+
     render() {
         // console.log('check: ', this.props)
 
@@ -70,7 +76,9 @@ class HomeHeader extends Component {
                                 <div><b><FormattedMessage id="homeheader.doctor" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.select-doctor" /></div>
                             </div>
-                            <div className='child-content'>
+                            <div className='child-content'
+                                onClick={() => this.handleViewNewAppointment()}
+                            >
                                 <div><b><FormattedMessage id="homeheader.package" /></b></div>
                                 <div className='subs-title'><FormattedMessage id="homeheader.check-health" /></div>
                             </div>

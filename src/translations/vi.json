@@ -6,10 +6,29 @@
         "select-room": "Chọn bệnh viện phòng khám",
         "doctor": "Bác sĩ",
         "select-doctor": "Chọn bác sĩ giỏi",
-        "package": "Gói khám",
-        "check-health": "Khám sức khỏe tổng quát",
+        "package": "Lịch hẹn",
+        "check-health": "Kiểm tra lịch hẹn",
         "support": "Hỗ trợ",
-        "welcome": "Xin chào"
+        "welcome": "Xin chào",
+        "list-specialty": "Danh sách chuyên khoa",
+        "list-clinic": "Danh sách phòng khám",
+        "list-doctor": "Danh sách bác sĩ"
+    },
+    "homefooter": {
+        "company": "Công ty Công nghệ CareFlow",
+        "address": "📍 123 Đường Công Nghệ, Quận 1, TP. HCM, Việt Nam",
+        "phone": "📞 0123-456-789 (8h - 20h)",
+        "email": "📧 support@careflow.vn (7h - 18h)",
+        "policy": "Chính sách",
+        "policy_contact": "Liên hệ hợp tác",
+        "policy_digital": "Chuyển đổi số",
+        "policy_security": "Chính sách bảo mật",
+        "policy_terms": "Quy chế hoạt động",
+        "partner": "Đối tác bảo trợ nội dung",
+        "partner_1": "Hello Doctor - \"Sức khỏe tinh thần\"",
+        "partner_2": "Hệ thống y khoa Bernard - \"Y khoa chuyên sâu\"",
+        "partner_3": "Doctor Check - \"Sức khỏe tổng quát\"",
+        "connect": "Kết nối với chúng tôi"
     },
     "banner": {
         "title1": "NỀN TẢNG Y TẾ",
@@ -61,7 +80,8 @@
         "medical-facility-outstanding": "Cơ sở y tế nổi bật",
         "handbook": "Cẩm nang",
         "about": "Truyền thông nói gì về Care Flow",
-        "more-infor": "Xem thêm"
+        "more-infor": "Xem thêm",
+        "text-about": "CareFlow là nền tảng đặt lịch khám bệnh trực tuyến hàng đầu tại Việt Nam, giúp kết nối bệnh nhân với các bác sĩ, phòng khám và bệnh viện uy tín trên toàn quốc. Với hệ thống đặt lịch thông minh, CareFlow giúp người dùng dễ dàng lựa chọn bác sĩ theo chuyên khoa, địa điểm và thời gian phù hợp, giúp tiết kiệm thời gian và nâng cao trải nghiệm khám chữa bệnh."
     },
     "manage-schedule": {
         "title": "Quản lý kế hoạch khám bệnh của bác sĩ",

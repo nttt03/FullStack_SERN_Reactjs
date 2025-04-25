@@ -5,6 +5,7 @@ import HomeHeader from '../../HomePage/HomeHeader';
 import HomeFooter from '../../HomePage/HomeFooter';
 import * as actions from '../../../store/actions';
 import { LANGUAGES } from '../../../utils';
+import { FormattedMessage } from 'react-intl';
 
 class ListDoctor extends Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class ListDoctor extends Component {
                 <HomeHeader />
                 <div className="list-doctor-container">
                     <div className="list-doctor-content">
-                        <h2 className="section-title">Bác sĩ nổi bật</h2>
+                        <h2 className="section-title"><FormattedMessage id='homeheader.list-doctor' /></h2>
                         {arrDoctors && arrDoctors.length > 0 ? (
                             arrDoctors.map((item, index) => {
                                 let imageBase64 = '';
