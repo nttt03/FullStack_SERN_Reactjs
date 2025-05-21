@@ -5,8 +5,18 @@ import { connect } from 'react-redux';
 class Home extends Component {
 
     render() {
-        const { isLoggedIn } = this.props;
-        let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/home';
+        const { isLoggedIn, roleId } = this.props;
+        // let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/home';
+        let linkToRedirect = '/home'; // mặc định
+
+        if (isLoggedIn) {
+            if (roleId === 'R1' || roleId === 'R2') {
+                linkToRedirect = '/system/user-manage';
+            } else if (roleId === 'R3') {
+                linkToRedirect = '/home';  // hoặc bất kỳ path nào bạn muốn cho bệnh nhân
+            }
+        }
+
 
         return (
             <Redirect to={linkToRedirect} />
@@ -17,7 +27,8 @@ class Home extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        roleId: state.user.userInfo?.roleId  // thêm dòng này
     };
 };
 

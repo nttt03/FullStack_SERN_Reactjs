@@ -1,5 +1,6 @@
 import locationHelperBuilder from "redux-auth-wrapper/history4/locationHelper";
 import { connectedRouterRedirect } from "redux-auth-wrapper/history4/redirect";
+import { path } from "../utils";
 
 const locationHelper = locationHelperBuilder({});
 
@@ -15,4 +16,14 @@ export const userIsNotAuthenticated = connectedRouterRedirect({
     wrapperDisplayName: 'UserIsNotAuthenticated',
     redirectPath: (state, ownProps) => locationHelper.getRedirectQueryParam(ownProps) || '/',
     allowRedirectBack: false
+});
+
+export const userIsAdminOrDoctor = connectedRouterRedirect({
+    authenticatedSelector: state => {
+        const isLoggedIn = state.user.isLoggedIn;
+        const roleId = state.user.userInfo?.roleId;
+        return isLoggedIn && (roleId === 'R1' || roleId === 'R2');
+    },
+    wrapperDisplayName: 'UserIsAdminOrDoctor',
+    redirectPath: path.HOME,
 });

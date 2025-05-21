@@ -5,6 +5,7 @@ import './HomeHeader.scss'
 import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions';
 import { withRouter } from 'react-router';
+import * as actions from "../../store/actions";
 
 class HomeHeader extends Component {
 
@@ -49,6 +50,7 @@ class HomeHeader extends Component {
 
         // language này đc lấy từ trong redux ra (trong mapStateToProps bên dưới) chứ ko phải truyền từ cha sang con
         let language = this.props.language;
+        const { userInfo, processLogout, isLoggedIn } = this.props;
         return (
             <React.Fragment>
                 <div className='home-header-container'>
@@ -84,12 +86,34 @@ class HomeHeader extends Component {
                             </div>
                         </div>
                         <div className='right-content'>
-                            <div className='support'><i className="fas fa-question-circle me-2"></i><FormattedMessage id="homeheader.support" /></div>
-                            <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} >
-                                <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span>
-                            </div>
-                            <div className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'} >
-                                <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
+                            {isLoggedIn ? (
+                                <div className='sign-in-out-content'>
+                                    <span className=''>
+                                        <FormattedMessage id="homeheader.welcome" />, {userInfo && userInfo.firstName ? userInfo.firstName : ''}!
+                                    </span>
+                                    <div className="btn btn-logout" onClick={processLogout} title='Logout'>
+                                        <i className="fas fa-sign-out-alt"></i>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className='sign-in-out-content'>
+                                    <div className='btn btn-login' onClick={() => this.props.history.push('/login')}>
+                                        <FormattedMessage id="homeheader.login" defaultMessage="Sign in" />
+                                    </div>
+                                    <div className='btn btn-register' onClick={() => this.props.history.push('/register')}>
+                                        <FormattedMessage id="homeheader.register" defaultMessage="Sign up" />
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* <div className='support'><i className="fas fa-question-circle me-2"></i><FormattedMessage id="homeheader.support" /></div> */}
+                            <div className='language-content'>
+                                <div className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'} >
+                                    <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>VN</span>
+                                </div>
+                                <div className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'} >
+                                    <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>EN</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -144,11 +168,13 @@ const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
         language: state.app.language,
+        userInfo: state.user.userInfo,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        processLogout: () => dispatch(actions.processLogout()),
         // fire 1 action redux (action là changeLanguageApp đầu vào là language)
         changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
