@@ -42,7 +42,7 @@ class DetailDoctor extends Component {
 
     render() {
         // console.log(this.props.match.params.id)
-        console.log('state: ', this.state)
+        // console.log('state: ', this.state)
         let { language } = this.props;
         let { detailDoctor } = this.state;
         let nameVi, nameEn = '';

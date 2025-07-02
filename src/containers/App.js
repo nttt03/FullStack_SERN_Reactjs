@@ -18,6 +18,7 @@ import ListSpecialty from './Patient/Specialty/ListSpecialty.js';
 import ListClinic from './Patient/Clinic/ListClinic.js';
 import ListDoctor from './Patient/Doctor/ListDoctor.js';
 import NewAppointment from './Patient/AppointmentSchedule/NewAppointment.js';
+import DoneAppointment from './Patient/AppointmentSchedule/DoneAppointment.js';
 
 import { CustomToastCloseButton } from '../components/CustomToast';
 import CustomScrollbars from '../components/CustomScrollbars.js';
@@ -68,6 +69,7 @@ class App extends Component {
                                     <Route path={path.LIST_DOCTOR} component={ListDoctor} />
 
                                     <Route path={path.NEW_APPOINTMENT} component={NewAppointment} />
+                                    <Route path={path.DONE_APPOINTMENT} component={DoneAppointment} />
 
                                 </Switch>
                             </CustomScrollbars>

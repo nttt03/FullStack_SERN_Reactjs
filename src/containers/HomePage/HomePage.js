@@ -7,6 +7,7 @@ import OutStandingDoctor from './Section/OutStandingDoctor';
 import HandBook from './Section/HandBook';
 import About from './Section/About';
 import HomeFooter from './HomeFooter';
+import ChatBox from '../../components/Chatbox/ChatBox';
 
 // import css files slick
 import "slick-carousel/slick/slick.css";
@@ -22,17 +23,18 @@ class HomePage extends Component {
             speed: 500,
             slidesToShow: 4,
             slidesToScroll: 1,
-            
+
         };
         return (
             <div>
-                <HomeHeader isShowBanner={true}/>
-                <Specialty settings={settings}/>
-                <MedicalFacility settings={settings}/>
-                <OutStandingDoctor settings={settings}/>
-                <HandBook settings={settings}/>
+                <HomeHeader isShowBanner={true} />
+                <Specialty settings={settings} />
+                <MedicalFacility settings={settings} />
+                <OutStandingDoctor settings={settings} />
+                <HandBook settings={settings} />
                 <About />
                 <HomeFooter />
+                {/* <ChatBox /> */}
             </div>
         );
     }

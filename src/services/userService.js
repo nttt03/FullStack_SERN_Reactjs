@@ -101,10 +101,24 @@ const postSendRemedy = (data) => {
     return axios.post(`/api/send-remedy`, data)
 }
 
+const getNewAppointment = (patientId) => {
+    return axios.get(`/api/get-new-appointment?patientId=${patientId}`)
+}
+
+const getDoneAppointment = (patientId) => {
+    return axios.get(`/api/get-done-appointment?patientId=${patientId}`)
+}
+
+// const getNewAppointment = (patientId) => {
+//     return axios.get(`/api/get-new-appointment`, {
+//         params: { patientId } // Axios sẽ tự động encode và thêm vào query string
+//     });
+// };
+
 export {
     handleLoginApi, getAllUsers, createNewUserService, deleteUserService, editUserService, getAllCodeService,
     getTopDoctorHomeService, getAllDoctors, saveDetailDoctorService, getDetailInforDoctor, saveBulkScheduleDoctor,
     getScheduleDoctorByDate, getExtraInforDoctorById, getProfileDoctorById, postPatientBookingAppointment,
     postVerifyBookAppointment, createNewSpecialty, getAllSpecialty, getAllDetailSpecialtyById, createNewClinic,
-    getAllClinic, getAllDetailClinicById, getAllPatientForDoctor, postSendRemedy
+    getAllClinic, getAllDetailClinicById, getAllPatientForDoctor, postSendRemedy, getNewAppointment, getDoneAppointment
 }

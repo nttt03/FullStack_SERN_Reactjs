@@ -6,6 +6,7 @@ import { LANGUAGES } from '../../utils';
 import { changeLanguageApp } from '../../store/actions';
 import { withRouter } from 'react-router';
 import * as actions from "../../store/actions";
+import { injectIntl } from 'react-intl';
 
 class HomeHeader extends Component {
 
@@ -46,6 +47,8 @@ class HomeHeader extends Component {
     }
 
     render() {
+        const { intl } = this.props;
+        const placeholderText = intl.formatMessage({ id: 'banner.placeholder' });
         // console.log('check: ', this.props)
 
         // language này đc lấy từ trong redux ra (trong mapStateToProps bên dưới) chứ ko phải truyền từ cha sang con
@@ -125,7 +128,7 @@ class HomeHeader extends Component {
                             <div className='title2'><FormattedMessage id="banner.title2" /></div>
                             <div className='search'>
                                 <i className="fas fa-search"></i>
-                                <input type='text' placeholder='Tìm chuyên khoa khám bệnh' />
+                                <input type="text" placeholder={placeholderText} />
                             </div>
                         </div>
                         <div className='content-down'>
@@ -180,4 +183,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(injectIntl(HomeHeader)));

@@ -33,6 +33,7 @@
     "banner": {
         "title1": "MEDICAL FOUNDATION",
         "title2": "COMPREHENSIVE HEALTH CARE",
+        "placeholder": "Find a specialist",
         "child1": "Specialized examination",
         "child2": "Remote examination",
         "child3": "General examination",
@@ -117,6 +118,17 @@
             "placeholder": "Select gender...",
             "price": "Price: ",
             "free": "Free booking"
+        },
+        "appointment-patient": {
+            "new-appointment": "New appointment",
+            "done-appointment": "History",
+            "title": "Appointment information",
+            "title-none": "You currently do not have any appointments scheduled on this page!",
+            "date": "Date:",
+            "time": "Time:",
+            "address": "Address:",
+            "price": "Price:",
+            "doctor": "Doctor:"
         }
     },
     "admin": {

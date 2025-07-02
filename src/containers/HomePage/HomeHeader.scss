@@ -212,9 +212,10 @@
 }
 
 .home-header-banner {
-    background         : url(../../assets/careFlow_bg.png);
+    // background            : url(../../assets/careFlow_bg.png);
+    background         : url(../../assets/images/banner_homepage.jpg);
     background-repeat  : no-repeat;
-    background-size    : cover;
+    background-size    : contain;
     background-position: center;
     height             : 650px;
     display            : flex;
@@ -227,18 +228,20 @@
         background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba(255, 255, 255, 0.1));
 
         .title1 {
-            color        : #ffffff;
+            color        : #003553;
             text-align   : center;
             font-size    : 30px;
+            font-weight  : 600;
             text-shadow  : 1px 1px 1px #333;
             margin-top   : 30px;
             margin-bottom: 5px;
         }
 
         .title2 {
-            color        : #ffffff;
+            color        : #003553;
             text-align   : center;
             font-size    : 30px;
+            font-weight  : 600;
             text-shadow  : 1px 1px 1px #333;
             margin-bottom: 15px;
         }
@@ -250,8 +253,8 @@
             align-items    : center;
             margin         : 0 auto;
             padding        : 10px;
-            border-radius  : 25px;
-            background     : #f7d800;
+            border-radius  : 5px;
+            background     : #fbfaf9;
 
             i {
                 margin: 0 5px;
@@ -259,7 +262,7 @@
 
             input {
                 height    : 30px;
-                width     : 360px;
+                width     : 660px;
                 background: transparent;
                 border    : none;
                 outline   : none;

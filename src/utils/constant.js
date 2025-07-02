@@ -12,7 +12,7 @@ export const path = {
     LIST_CLINIC: '/list-clinic',
     LIST_DOCTOR: '/list-doctor',
     NEW_APPOINTMENT: '/new-appointment',
-    OLD_APPOINTMENT: '/old-appointment',
+    DONE_APPOINTMENT: '/done-appointment/:id',
 };
 
 export const LANGUAGES = {
